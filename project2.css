@@ -1,0 +1,757 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  --main: #f5f6fa;
+  --bg: black;
+  --color: #ea2027;
+  --red: #ea2027;
+  --white: #fff;
+  --green: rgba(0, 148, 50, 1);
+  --black: #000;
+}
+body {
+  background: var(--bg);
+  color: var(--main);
+  /* font-family: 'Belanosima', sans-serif; */
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  background-color: var(--color);
+}
+body::-webkit-scrollbar {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--color);
+  border-radius: 30px;
+}
+
+.navbar {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 86%;
+  padding: 0 7%;
+  background-color: var(--bg);
+  height: 70px;
+  z-index: 1;
+}
+.navbar #slide {
+  display: none;
+}
+
+.navbar label {
+  float: right;
+  font-size: 1.5rem;
+  line-height: 70px;
+  display: none;
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  line-height: 70px;
+  font-weight: 900;
+}
+.navbar .logo span {
+  color: transparent;
+  padding: 0 10px;
+  -webkit-text-stroke: 1px var(--color);
+  border: 2px solid var(--color);
+  letter-spacing: 2px;
+}
+.navbar ul {
+  line-height: 70px;
+}
+.navbar ul li {
+  display: inline-block;
+  margin-left: 1.5rem;
+  position: relative;
+}
+.navbar ul li a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--main);
+  font-weight: 700;
+}
+
+.navbar ul li .active {
+  color: var(--color);
+  border-bottom: 3px solid var(--color);
+}
+.navbar ul li a::before {
+  content: '';
+  position: absolute;
+  top: 47px;
+  left: 0;
+  width: 0%;
+  border-bottom: 3px solid var(--color);
+  transition: all 0.4s;
+}
+.navbar ul li a:hover::before {
+  width: 100%;
+}
+.navbar ul li a:hover {
+  color: var(--color);
+}
+
+/* section1 start here */
+section {
+  width: 86%;
+}
+
+#home {
+  min-height: 90vh;
+  width: 86%;
+  padding: 0 7%;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* font change animation start */
+.contain {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+  align-items: center;
+  font-weight: 500;
+}
+.contain .text {
+  font-size: 3.5rem;
+}
+.contain .slide {
+  height: 4rem;
+  top: 0;
+  font-size: 3.5rem;
+  margin-left: 1rem;
+  line-height: 4rem;
+  overflow: hidden;
+  color: var(--color);
+}
+.contain .slide li {
+  list-style: none;
+  line-height: 4rem;
+  animation: up 8s steps(4) infinite;
+}
+@keyframes up {
+  100% {
+    top: 100%;
+    transform: translateY(-256px);
+  }
+}
+.contain .slide li span::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--bg);
+  position: absolute;
+  border-left: 2px solid var(--color);
+  animation: ri8 2s steps(13) infinite;
+}
+@keyframes ri8 {
+  100% {
+    left: 100%;
+  }
+}
+
+.sec-1 .first h4 {
+  font-size: 1.7rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+}
+.sec-1 .first p {
+  font-size: 1rem;
+  padding-bottom: 1.5rem;
+  font-weight: 400;
+}
+.sec-1 .first button {
+  font-size: 1.5rem;
+  padding: 7px 10px;
+  border: 3px solid var(--color);
+  color: var(--main);
+  background-color: transparent;
+  font-weight: 500;
+  transition: 0.6s;
+}
+.sec-1 .first button:hover {
+  color: var(--bg);
+  background-color: var(--color);
+  box-shadow: 0 7px 15px rgba(234, 32, 39, 0.4);
+  scale: 1.1;
+}
+.sec-1 .first button:active {
+  transform: translateY(4px);
+  box-shadow: 0 5px 10px rgba(234, 32, 39, 0.4);
+}
+
+.image_box {
+  width: auto;
+}
+.image_box img {
+  height: 90vh;
+  transition: all 0.6s;
+  filter: drop-shadow(0px 0px 10px var(--red));
+}
+img:hover {
+  opacity: 0.6;
+}
+/* section 2 start here ------------------------------------------------------------- */
+
+#about {
+  min-height: 90vh;
+  width: 86%;
+  padding: 0 7%;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#about .about_img {
+  width: 50%;
+}
+
+#about .about_info {
+  width: 50%;
+}
+
+#about .about_info h1 {
+  color: var(--color);
+  font-size: 2.5rem;
+}
+#about .about_info hr {
+  border: 1px double var(--color);
+}
+#about .about_info h2 {
+  color: transparent;
+  font-size: 2rem;
+  -webkit-text-stroke: 1px var(--main);
+  margin-top: 10px;
+  font-weight: 900;
+}
+#about .about_info p {
+  color: var(--main);
+  font-size: 1rem;
+  text-align: justify;
+  margin-top: 10px;
+}
+#about .about_info button {
+  color: var(--color);
+  font-size: 1.5rem;
+  padding: 10px 13px;
+  background-color: transparent;
+  border: 1px solid var(--color);
+  font-weight: 700;
+  margin-top: 15px;
+  border-radius: 5px;
+  transition: all 0.6s;
+}
+#about .about_info button:hover {
+  background-color: var(--color);
+  color: var(--main);
+  cursor: pointer;
+}
+/* section 2 end here ------------------------------------------------------------- */
+
+/* section 3 start here ....................................................... */
+#portfolio {
+  min-height: 90vh;
+  width: 86%;
+  padding: 0 7%;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#portfolio h1 {
+  color: var(--color);
+  text-align: center;
+}
+
+#portfolio .main {
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--bg);
+  flex-wrap: wrap;
+}
+#portfolio .main .card {
+  width: 230px;
+  position: relative;
+  height: 315px;
+  border-radius: 7px;
+  background-color: var(--main);
+  transition: all 0.6s;
+  margin: 20px 0;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 7px;
+  transition: all 0.6s;
+}
+.face-1 {
+  width: 100%;
+  text-align: center;
+  transform: translateY(125px);
+}
+.face-1 p {
+  text-align: justify;
+  padding: 15px;
+  font-weight: 500;
+}
+.face-1 button {
+  color: var(--color);
+  border: 2px solid var(--color);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  transition: all 0.6s;
+}
+.face-1 button:hover {
+  background-color: var(--color);
+  color: var(--main);
+  cursor: pointer;
+}
+.face-2 {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  color: var(--main);
+  background-color: var(--color);
+}
+.face-2 p {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 35px;
+  font-weight: 900;
+}
+.card:hover .face-2 {
+  height: 80px;
+  width: 80px;
+  color: var(--color);
+  transform: translate(75px, 30px);
+  border-radius: 50%;
+  background-color: transparent;
+}
+/* section 3 end here ....................................................... */
+
+/* contact section start here ------------------------------------------------------------------- */
+
+#contact {
+  min-height: 90vh;
+  width: 86%;
+  padding: 0 7%;
+  padding-top: 70px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#contact .btngroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color);
+  width: 400px;
+  height: 40px;
+  line-height: 50px;
+  border: 2px solid var(--color);
+  border-radius: 25px;
+}
+#contact .btngroup .Btn_1 {
+  color: var(--color);
+  height: 42px;
+  line-height: 40px;
+  width: 130px;
+  border-radius: 25px;
+  background-color: var(--white);
+  transition: all 0.6s;
+}
+#contact .btngroup .Btn_1 .dot {
+  margin: 3px 0 0 4px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: var(--color);
+  line-height: 40px;
+  position: absolute;
+  transition: all 0.6s;
+}
+#contact .Btn_1.active .dot {
+  margin-left: 91px;
+}
+
+#contact .contactgroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-top: 15px;
+}
+#contact .contactgroup #Btn_1 {
+  display: none;
+  transition: all 0.6s;
+}
+
+#contact .Btn_1:hover {
+  cursor: pointer;
+}
+
+#contact .contactgroup #Btn_1:checked ~ .contact_data {
+  display: flex;
+  transition: all 0.6s;
+}
+#contact .contactgroup #Btn_1:checked ~ .enquiry_form {
+  display: none;
+  transition: all 0.6s;
+}
+
+.contact_data {
+  color: var(--white);
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--black);
+  transition: all 0.6s;
+}
+.contact_data .maps {
+  width: 45%;
+}
+.contact_data .maps iframe {
+  width: 100%;
+}
+
+.contact_data .data {
+  width: 45%;
+}
+.contact_data h1 {
+  font-size: 1.5rem;
+  text-align: start;
+  color: var(--color);
+  font-weight: 900;
+}
+.contact_data .data table {
+  width: 100%;
+}
+.contact_data .data table tr td {
+  color: var(--white);
+  padding: 4px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.contact_data .data table tr td h3 {
+  margin-top: 10px;
+  font-weight: 700;
+}
+.contact_data .data table tr .social i {
+  margin: 5px 15px 0 0;
+  transition: all 0.4s;
+  text-align: center;
+}
+.contact_data .data table tr .social i:hover {
+  color: var(--color);
+  cursor: pointer;
+}
+.contact_data .data table tr td textarea {
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  padding: 3px 5px;
+}
+.contact_data .data table tr td textarea:focus {
+  border-color: var(--color);
+}
+.contact_data .data table tr td .button {
+  color: var(--white);
+  background-color: var(--green);
+  border: none;
+  padding: 9px 15px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  font-size: 1.1rem;
+  transition: 0.4s;
+}
+.contact_data .data table tr td .button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.enquiry_form {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--black);
+  transition: 0.6s;
+}
+
+.enquiry_form form h1 {
+  font-size: 1.5rem;
+  color: var(--color);
+  font-weight: 900;
+}
+
+.enquiry_form Form {
+  margin-top: 20px;
+  text-align: start;
+  width: 70%;
+}
+
+.enquiry_form form .formdata {
+  margin-bottom: 20px;
+}
+.enquiry_form form .formdata label,
+.enquiry_form form .formcheck label {
+  font-size: 1.2rem;
+  line-height: 35px;
+  font-style: 600;
+  width: 100%;
+}
+.enquiry_form form .formdata input,
+.enquiry_form form .formdata textarea {
+  width: 97%;
+  font-size: 1rem;
+  outline: none;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  padding: 9px 15px;
+  color: var(--white);
+}
+.enquiry_form form .formdata input:focus,
+.enquiry_form form .formdata textarea:focus {
+  border-color: var(--color);
+}
+
+.enquiry_form form .formcheck input[type='checkbox'] {
+  accent-color: var(--color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.enquiry_form form .formbtn {
+  text-align: center;
+}
+.enquiry_form form .formbtn input[type='submit'] {
+  color: var(--white);
+  background-color: var(--green);
+  border: none;
+  padding: 9px 15px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  font-size: 1.2rem;
+  transition: 0.4s;
+}
+.enquiry_form form .formbtn input[type='submit']:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+/* contact section end here ------------------------------------------------------------------- */
+
+@media screen and (max-width: 930px) {
+  .navbar label {
+    display: block;
+  }
+
+  .navbar ul {
+    background-color: var(--color);
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    height: 90vh;
+    z-index: 1;
+    text-align: center;
+    left: -100%;
+    transition: all 0.5s;
+    padding: 0;
+  }
+
+  .navbar ul li {
+    line-height: 80px;
+    display: block;
+  }
+
+  .navbar ul li a {
+    color: white;
+    position: relative;
+    font-size: 1.5rem;
+  }
+
+  .navbar ul li .active {
+    color: black;
+    border-bottom: 3px solid black;
+  }
+  .navbar ul li a::before {
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 0%;
+    border-bottom: 3px solid var(--bg);
+    transition: all 0.4s;
+  }
+  .navbar ul li a:hover::before {
+    width: 100%;
+  }
+  .navbar ul li a:hover {
+    color: var(--bg);
+  }
+  .sec-1 .first h1 {
+    font-size: 3rem;
+  }
+  .sec-1 .first h4 {
+    font-size: 1.2rem;
+  }
+  .sec-1 .first button {
+    font-size: 1.3rem;
+  }
+
+  #slide:checked ~ ul {
+    left: 0;
+  }
+
+  /* section1 start here */
+  #home {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+  /* font change animation start */
+
+  .contain .text {
+    font-size: 2.5rem;
+  }
+  .contain .slide {
+    height: 3.5rem;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    line-height: 3.5rem;
+  }
+  .contain .slide li {
+    list-style: none;
+    line-height: 3.5rem;
+    animation: up 8s steps(4) infinite;
+  }
+  @keyframes up {
+    100% {
+      top: 100%;
+      transform: translateY(-224px);
+    }
+  }
+
+  .sec-1 .first h4 {
+    font-size: 1.3rem;
+  }
+  .sec-1 .first p {
+    font-size: 1rem;
+  }
+
+  .image_box {
+    height: 50vh;
+    width: 50vw;
+  }
+  .image_box img {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* about section start ======================================================================== */
+  #about {
+    width: 86%;
+    flex-direction: column;
+  }
+
+  #about .about_img {
+    width: 100%;
+  }
+
+  #about .about_info {
+    width: 100%;
+  }
+
+  #about .about_info h1 {
+    font-size: 2rem;
+  }
+  #about .about_info p {
+    color: var(--main);
+    font-size: 1rem;
+    text-align: justify;
+    margin-top: 10px;
+  }
+  #about .about_info button {
+    font-size: 1.3rem;
+  }
+  /* about section end ======================================================================== */
+
+  /* portfolio section start ======================================================================== */
+  #portfolio .main .card {
+    width: 100%;
+  }
+
+  .card:hover .face-2 {
+    height: 80px;
+    width: auto;
+    transform: translate(0px, 30px);
+  }
+  /* portfolio section end ======================================================================== */
+
+  /* contact section start ======================================================================== */
+  #contact {
+    padding: 70px 7% 0 7%;
+    width: 86%;
+  }
+
+  .contact_data {
+    flex-direction: column-reverse;
+  }
+
+  .contact_data .maps {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .contact_data .maps iframe {
+    height: 300px;
+  }
+
+  .contact_data .data {
+    width: 100%;
+  }
+
+  .enquiry_form {
+    width: 90%;
+  }
+  .enquiry_form Form {
+    width: 100%;
+  }
+}
